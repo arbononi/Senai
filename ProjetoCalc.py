@@ -10,11 +10,12 @@ while(opcao != 6):
     soma = sub = mult = div = exp = None
     #soma, sub, mult, div, exp = None, None, None, None, None
 
-    opcao = int(input("Escolha a operação:\n1- Soma\n2- Subtração\n3-Multiplicação\n4- Divisão\n5- Exponenciação\n6-Encerrar\n\n"))
+    opcao = int(input("Escolha a operação:\n1- Soma\n2- Subtração\n3- Multiplicação\n4- Divisão\n5- Exponenciação\n6- Encerrar\n\n"))
     
     if (opcao < 1 or opcao > 6):
         print("Opção inválida!")
         continue
+    
     if (opcao == 6):
         break
     
