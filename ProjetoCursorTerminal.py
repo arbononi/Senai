@@ -4,7 +4,7 @@
 #║                                     ║                                     ║
 #║ 1 - CAFÉ EXPRESSO                   ║                                     ║
 #║ 2 - CAFÉ COM LEITE                  ║                                     ║
-#║ 3 - CAPPUCCIONO                     ║                                     ║
+#║ 3 - CAPPUCCINO                      ║                                     ║
 #║ 4 - ÁGUA QUENTE                     ║                                     ║
 #║ 5 - LEITE PURO                      ║                                     ║
 #║                                     ║                                     ║
@@ -189,7 +189,7 @@ print("╠" + "═" * 37 + "╦" + "═" * 37 + "╣")
 print("║" + " " * 37 + "║" + " " * 37 + "║")
 print("║ 1 - CAFÉ EXPRESSO" + " " * 19 + "║" + " " * 37 + "║")
 print("║ 2 - CAFÉ COM LEITE" + " " * 18 + "║" + " " * 37 + "║")
-print("║ 3 - CAPPUCCIONO" + " " * 21 + "║" + " " * 37 + "║")
+print("║ 3 - CAPPUCCINO" + " " * 22 + "║" + " " * 37 + "║")
 print("║ 4 - ÁGUA QUENTE" + " " * 21 + "║" + " " * 37 + "║")
 print("║ 5 - LEITE PURO" + " " * 22 + "║" + " " * 37 + "║")
 print(("║" + " " * 37 + "║" + " " * 37 +"║\n") * 7, end="")
