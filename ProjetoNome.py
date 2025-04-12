@@ -32,12 +32,8 @@ print()
 print("Seus dados são:")
 print("Nome " + "." * 13 + ": ", nome)
 print("Data de Nascimento: ", data_nasc)
-#print("CPF No " + "." *  11 + ": ", num_cpf)
 print("CPF No " + "." * 11 + ": ", formatar_cpf(num_cpf))
-#print("Telefone No " + "." * 6 + ": ", telefone)
 print("Telefone No " + "." * 6 + ": ", formatar_fone(telefone))
-
-#f"{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:]}"
 
 print()
 

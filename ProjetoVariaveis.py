@@ -9,9 +9,9 @@ w = True              #variável bool (boleana)
 
 nome = "André Rogério Bononi"
 data_nasc = "03/12/1969"
-cpf = 14952312836
-telefone = 16991933081
-
+cpf = 11111111111
+telefone = 22222222222
+           
 print("Meus dados são:")
 print("Nome: ..........", nome)
 print("Data Nascimento: ", data_nasc)

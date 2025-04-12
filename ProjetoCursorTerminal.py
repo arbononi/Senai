@@ -24,7 +24,6 @@
 
 import sys
 from os import system as limp
-from PIL import Image
 
 # ANSI colors
 RESET = "\033[0m"

@@ -21,9 +21,9 @@ opcao = 0
 def ImprimePadrao():
     limp("cls")
     print("Nome ..........:", "André Rogério Bononi")
-    print("Telefone ......:", "(16) 99193-3081")
-    print("Endereço ......:", "Rua Carlos Gomes, 1974")
-    print("Data Nascimento:", "03/12/1969")
+    print("Telefone ......:", "(XX) XXXXX-XXXX")
+    print("Endereço ......:", "YYY YYYYYY YYYYY, NNNN")
+    print("Data Nascimento:", "05/04/2025")
     print("Nacionalidade .:", "Brasileira")
     print("Naturalidade ..:", "Sertãozinho\n")
     
