@@ -245,7 +245,8 @@ def exibir_resultados():
         Funcoes.posicionarCursor(23, 3)
         Funcoes.exibirMensagem(23, 3, "Pressione qualquer tecla para visualizar próximo paciente", "")
         input()
-
+    Funcoes.limpar_linha()
+    
 lista_pacientes = []
 
 continuar = "S"
