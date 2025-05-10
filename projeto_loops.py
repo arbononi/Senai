@@ -6,7 +6,7 @@ from time import sleep
 class ProjetoLoops():
     _lin_opcao = 0
     _col_opcao = 22
-
+    
     layout = [
         { "col": 1, "value": "╔═══════════════════════════════════════╗", "loop": False },
         { "col": 1, "value": "║                                       ║", "loop": True },
@@ -30,9 +30,8 @@ class ProjetoLoops():
         { "lin": 14, "col": 3, "value": " S - Sair do Sistema " }
     ]
 
-    vogais = [ 'a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ú', 'ã', 'õ', 'à', 'â', 'ô' ]
-    limite = 8
-
+    vogais = [ 'a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú', 'ã', 'õ', 'à', 'â', 'ê', 'ô' ]
+    
     def __init__(self):
         self.opcoes = {
             "1" : self.tabuada_com_while,
@@ -54,11 +53,13 @@ class ProjetoLoops():
             limp('cls')
             self.desenha_tela()
             self.exibir_menu()
-            self.posicionar_cursor(self._lin_opcao, self._col_opcao);
-            opcao = input()
+            self.posicionar_cursor(self._lin_opcao, self._col_opcao)
+            opcao = input().upper()
             if opcao == 'S':
                 break
             if opcao not in self.opcoes.keys():
+                self.limpar_linha_mensagem(self._lin_opcao, 3)
+                self.posicionar_cursor(self._lin_opcao, 3)
                 print("Opção inválida!")
                 sleep(1)
                 continue
@@ -73,6 +74,10 @@ class ProjetoLoops():
     def posicionar_cursor(self, lin, col):
         sys.stdout.write(f"\033[{lin};{col}H")
 
+    def limpar_linha_mensagem(self, lin, col):
+        self.posicionar_cursor(lin, col)
+        print(" " * 38, end="")
+        
     def desenha_tela(self):
         lin = 1
         for linha in self.layout:
@@ -227,9 +232,10 @@ class ProjetoLoops():
         frase = input("Digite uma frase: ")
         palavra = None
         qtd_vogais = 0
+        total_vogais = 0
         for letra in frase:
             if letra == " ":
-               print(f'A palavra {palavra} começa com uma {"consoante" if consoante else "vogal"} e possui {qtd_vogais} vogal(is)')
+               print(f'{palavra}: começa com uma {"consoante" if consoante else "vogal"}: Vogais: {qtd_vogais}')
                palavra = None
                qtd_vogais = 0
             else:
@@ -239,14 +245,17 @@ class ProjetoLoops():
                         consoante = True
                     else:
                         qtd_vogais += 1
+                        total_vogais += 1
                         consoante = False
                 else:
                     palavra += letra
                     if letra.lower() in self.vogais:
                         qtd_vogais += 1
+                        total_vogais += 1
 
         if palavra is not None:
-            print(f'A palavra {palavra} começa com uma {"consoante" if consoante else "vogal"} e possui {qtd_vogais} vogal(is)')
+            print(f'{palavra}: começa com uma {"consoante" if consoante else "vogal"}: Vogais: {qtd_vogais}')
+        print(f'Total de vogais da frase: {total_vogais}')
         return True
 
     def fechar(self):
