@@ -11,10 +11,10 @@ def get_numero():
     return tabuada
 
 def iniciar(tabuada):
-    x = 0
+    x = 1
     while x < 10:
-        x += 1
         print(f'{x} * {tabuada} =', x * tabuada)
+        x += 1
         sleep(0.5)
     return tabuada
 
