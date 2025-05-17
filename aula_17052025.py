@@ -3,6 +3,7 @@
 # tupla_numeros = ( 1, 2, 3)
 # dict_chave_valor = { 'nome': 'André, 'idade': 55, 'comissao': 5.5 }
 
+import sys
 import msvcrt
 from os import system
 from time import sleep
@@ -22,23 +23,76 @@ class Aula17052025:
             "9": self.dicionarios,
             "10": self.editar_dicionario,
             "11": self.incluir_nova_chave,
-            "12": self.tarefa_dicionario
+            "12": self.tarefa_dicionario_1,
+            "13": self.festa_aniversario,
+            "14": self.funcoes
         }
-        self.menu = [
-            " 1 - Listas",
-            " 2 - Exclusão de itens da Lista",
-            " 3 - Adicionar itens na Lista",
-            " 4 - Inserir item na Lista",
-            " 5 - Classificar Lista",
-            " 6 - Tarefa com Listas",
-            " 7 - Tuplas",
-            " 8 - Tarefa com Tuplas",
-            " 9 - Dicionários",
-            "10 - Editar dados do Dicionário",
-            "11 - Incluir nova chave no Dicionário",
-            "12 - Tarefa Dicionário",
-            " 0 - Sair"
+        self.dict_menu = [
+            { "lin" :  5, "col" :  3, "value": " 1 - Listas" },
+            { "lin" :  6, "col" :  3, "value": " 2 - Exclusão de itens da Lista" },
+            { "lin" :  7, "col" :  3, "value": " 3 - Adicionar itens na Lista" },
+            { "lin" :  8, "col" :  3, "value": " 4 - Inserir item na Lista" },
+            { "lin" :  9, "col" :  3, "value": " 5 - Classificar Lista" },
+            { "lin" : 10, "col" :  3, "value": " 6 - Tarefa com Listas" },
+            { "lin" : 11, "col" :  3, "value": " 7 - Tuplas" },
+            { "lin" : 12, "col" :  3, "value": " 8 - Tarefa com Tuplas" },
+            { "lin" : 13, "col" :  3, "value": " 9 - Dicionários" },
+            { "lin" : 14, "col" :  3, "value": "10 - Editar dados do Dicionário" },
+            { "lin" : 15, "col" :  3, "value": "11 - Incluir nova chave no Dicionário" },
+            { "lin" :  5, "col" : 44, "value": "12 - Tarefa Dicionário - 1" },
+            { "lin" :  6, "col" : 44, "value": "13 - Festa de Aniversário" },
+            { "lin" :  7, "col" : 44, "value": "14 - Funções" },
+            { "lin" : 15, "col" : 44, "value": " 0 - Sair" },
         ]
+        self.lista_convidados = [
+            'André', 'Elenice', 'Carla', 'Júnior',
+            'Iraide', 'Sônia - Prima',
+            'Dinei', 'Simone', 'Camilly', 'Gabriel',
+            'D. Maria', 'Seo Jove',
+            'Lucimar', 'Wanderley', 'Douglas', 'Maria Raquel',
+            'Eliete', 'Roberta',
+            'Gilberto', 'Sônia Cunhada', 'Igor',
+            'Maira', 'Felipe', 'Beatriz',
+            'Tatiane', 'Daniel', 'Igor',
+            'Silvana', 'Solange', 'Silvinha'
+        ]
+        self.tela_principal = [
+            { "lin":  1, "col": 1, "value": "╔══════════════════════════════════════════════════════════════════════════════╗" },
+            { "lin":  2, "col": 1, "value": "║                       MENU PRINCIPAL - AULA 17/05/2025                       ║" },
+            { "lin":  3, "col": 1, "value": "╠════════════════════════════════════════╦═════════════════════════════════════╣" },
+            { "lin":  4, "col": 1, "value": "║                                        ║                                     ║" },
+            { "lin": 17, "col": 1, "value": "╠════════════════════════════════════════╩═════════════════════════════════════╣" },
+            { "lin": 18, "col": 1, "value": "║ Escolha a opção desejada:                                                    ║" },
+            { "lin": 19, "col": 1, "value": "╚══════════════════════════════════════════════════════════════════════════════╝" }
+        ]
+        self.tela_tarefas = [
+            { "lin":  3, "col": 42, "value": "═" },
+            { "lin":  4, "col":  1, "value": "║                                                                              ║"},
+            { "lin": 17, "col": 42, "value": "═" },
+        ]
+
+    def desenhar_tela(self):
+        system('cls')
+        for info in self.tela_principal:
+            if info["lin"] == 4:
+                lin = 4
+                while lin < 17:
+                    self.exibir_conteudo(info["value"], lin, info["col"])
+                    lin += 1
+            else:
+                self.exibir_conteudo(info["value"], info["lin"], info["col"])
+        for info in self.dict_menu:
+            self.exibir_conteudo(info["value"], info["lin"], info["col"])
+        
+    def limpar_tela(self):
+        for info in self.tela_tarefas:
+            if info["lin"] == 4:
+                lin = info["lin"]
+                while lin < 17:
+                   self.exibir_conteudo(info["value"], lin, info["col"])
+                   lin += 1
+            else:
+                self.exibir_conteudo(info["value"], info["lin"], info["col"])
 
     def get_nome(self):
         while True:
@@ -76,14 +130,20 @@ class Aula17052025:
     def aguardar_tecla(self):
         msvcrt.getch()
 
+    def exibir_conteudo(self, conteudo, lin, col):
+        self.posicionarCursor(lin, col)
+        print(conteudo)
+
+    def posicionarCursor(self, linha: int, coluna: int):
+        sys.stdout.write(f"\033[{linha};{coluna}H")
+
     def iniciar(self):
         while True:
-            system('cls')
-            for opcoes in self.menu:
-                print(opcoes)
-            print()
+            self.desenhar_tela()
             try:
-                opcao = int(input('Escolha a opção desejada: '))
+                self.exibir_conteudo("Escolha a opção desejada: ", 18, 3)
+                self.posicionarCursor(18, 29)
+                opcao = int(input())
                 if opcao == 0:
                     break
                 acao = self.opcoes.get(str(opcao))
@@ -91,12 +151,12 @@ class Aula17052025:
                     _ = input("Opção inválida!")
                     continue
                 if acao and callable(acao):
-                    system('cls')
+                    self.limpar_tela()
                     esperar = acao()
                 if esperar:
-                    print('Pressione qualquer tecla para continuar...')
+                    self.exibir_conteudo('Pressione qualquer tecla para continuar...', 18, 3)
+                    self.posicionarCursor(18, 46)
                     self.aguardar_tecla()
-                    system('cls')
             except ValueError as ex:
                 _ = input('Valor inválida! Tente novamente! ')
         system('cls')
@@ -104,27 +164,34 @@ class Aula17052025:
     def listas(self):
         valores = [37,48,11,29,100,99]
         i = 0
-        print("Impressão com While")
+        lin = 4
+        self.exibir_conteudo("Impressão com While", lin, 3)
+        lin += 1
         while i < len(valores):
-            print(f'Conteúdo do índice {i}: {valores[i]}')
+            lin += 1
+            self.exibir_conteudo(f'Conteúdo do índice {i}: {valores[i]}', lin, 3)
             i += 1
-        print()
-        print("Impressão com For")
+        lin = 4
+        self.exibir_conteudo("Impressão com For", lin, 30)
         i = 0
+        lin += 1
         for valor in valores:
-            print(f'Conteúdo do índice {i}: {valor}')
+            lin += 1
+            self.exibir_conteudo(f'Conteúdo do índice {i}: {valor}', lin, 30)
             i += 1
-        print()
-        print("Imprimindo a lista direto")
+        lin += 2
+        self.exibir_conteudo("Imprimindo a lista direto", lin, 3)
         teste = valores
         teste1 = valores.copy()
-        print(f'Valores: {valores} - Endereço Memória: {hex(id(valores))}')
-        print(f'Testes: {teste} - Endereço Memória: {hex(id(teste))}')
-        print(f'Testes1: {teste1} - Endereço Memória: {hex(id(teste1))}')
-        del(valores[0])
-        print(f'Valores: {valores}')
-        print(f'Testes: {teste}')
-        print(f'Testes1: {teste1}')
+        lin += 1
+        self.exibir_conteudo(f'Valores: {valores} - Endereço Memória: {hex(id(valores))}', lin, 3)
+        lin += 1
+        self.exibir_conteudo(f'Testes: {teste} - Endereço Memória: {hex(id(teste))}', lin, 3)
+        self.exibir_conteudo(f'Testes1: {teste1} - Endereço Memória: {hex(id(teste1))}', lin, 3)
+        # del(valores[0])
+        # print(f'Valores: {valores}')
+        # print(f'Testes: {teste}')
+        # print(f'Testes1: {teste1}')
 
         return True
 
@@ -164,7 +231,7 @@ class Aula17052025:
         sleep(1)
         nome = input('Qual é seu nome? ')
         print(f'Obrigado, {nome.title()}. Agora você faz parte da minha lista!!!')
-        lista.append(nome) # type: ignore
+        lista.append(nome)
         print(f'A lista contém {len(lista)} que são: {lista}')
         return True
     
@@ -301,7 +368,7 @@ class Aula17052025:
         print(f'Novo dicinário dados: {dados}\n')
         return True
 
-    def tarefa_dicionario(self):
+    def tarefa_dicionario_1(self):
         print('Solicitar ao usuário que insira as seguintes dados no sistema:')
         print('Nome: deve ser uma string')
         print('Data Nascimento: dever ser uma string')
@@ -311,7 +378,7 @@ class Aula17052025:
         print('Salvar as informações do usuário num dicionário()')
         print('Imprimir os dados')
         print()
-        dados = { 'nome': '', 'data_nascto': '', 'cpf': 0, 'telefone': 0 }
+        dados = {}
         print('Insira seus dados conforme solicitado')
         dados['nome'] = self.get_nome()
         dados['data_nascto'] = self.get_data_nascto()
@@ -323,10 +390,31 @@ class Aula17052025:
 No. CPF .......: {dados['cpf']}\nTelefone ......: {dados['telefone']}\n')
         return True
 
+    def festa_aniversario(self):
+        print('Festa de Aniversário\n')
+        convidados = {}
+        i = 0
+        while i < 30:
+            for nome in self.lista_convidados:
+                print('Digite seu nome: ', end='')
+                for letra in nome:
+                    print(letra, end='')
+                    sleep(0.1)
+                i += 1
+                convidados[f"Convidado_{i}"] = nome
+                print(f'\nConvidado No {i} - {nome} registrou sua entrada!')
+            # nome = self.get_nome()
+            # if nome == "12345":
+            #     break
+            
+        for chave, valor in convidados.items():
+            print(f'{chave} - {valor}')
+        return True
 
+    def funcoes(self):
+        print('Função ainda não implementada...\n')
+        return True
         
-        
-
 app = Aula17052025()
 app.iniciar()
 
