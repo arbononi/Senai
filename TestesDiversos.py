@@ -1,5 +1,6 @@
 import os
 import time
+from os import system
 
 RESET = "\033[0m"
 ESPUMA  = "\033[38;2;255;245;225m"   # espuma

@@ -128,7 +128,7 @@ class Aula17052025:
         return valor
 
     def aguardar_tecla(self):
-        msvcrt.getch()
+        tecla = msvcrt.getch().decode("utf-8")
 
     def exibir_conteudo(self, conteudo, lin, col):
         self.posicionarCursor(lin, col)
