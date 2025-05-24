@@ -14,8 +14,8 @@ def esperar_tecla(ocultar_cursor: bool=True):
         tecla = ""
     return tecla
 
-def posicionarCursor(linha: int, coluna: int):
-    sys.stdout.write(f"\033[{linha};{coluna}H")
+def posicionarCursor(lin: int, col: int):
+    sys.stdout.write(f"\033[{lin};{col}H")
 
 def limpar_linha(lin, col, size):
     posicionarCursor(lin, col)
@@ -36,4 +36,13 @@ def exibir_conteudo(conteudo, lin, col):
     posicionarCursor(lin, col)
     print(conteudo)
 
+def desenhar_tela(layout, start_loop=0, end_loop=0):
+    for info in layout:
+        if start_loop > 0 and info["lin"] == start_loop:
+            lin = info["lin"]
+            while lin < end_loop:
+                exibir_conteudo(info["value"], lin, info["col"])
+                lin += 1
+        else:
+            exibir_conteudo(info["value"], info["lin"], info["col"])
 
