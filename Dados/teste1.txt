@@ -1,0 +1,20 @@
+1|Ana Paula da Silva|Rua das Flores, 123 - São Paulo/SP|12/03/1988|(11) 91234-5678
+2|Bruno Henrique Souza|Av. Brasil, 450 - Rio de Janeiro/RJ|25/07/1990|(21) 99876-5432
+3|Carla Mendes Oliveira|Rua das Laranjeiras, 56 - Recife/PE|09/11/1992|(81) 98877-1122
+4|Daniel Costa Ribeiro|Av. Goiás, 300 - Goiânia/GO|03/05/1985|(62) 98456-7890
+5|Eliane Martins Rocha|Rua São João, 789 - Belo Horizonte/MG|14/09/1978|(31) 99777-3344
+6|Felipe Augusto Lima|Rua das Palmeiras, 22 - Manaus/AM|01/01/1994|(92) 98123-4567
+7|Gabriela Nunes Freitas|Av. Independência, 321 - Curitiba/PR|29/06/1989|(41) 99666-7788
+8|Henrique Lopes Farias|Rua Ceará, 45 - Porto Alegre/RS|11/10/1993|(51) 98555-9900
+9|Isabela Tavares Duarte|Rua Bahia, 144 - Salvador/BA|20/02/1990|(71) 98765-1234
+10|João Victor Almeida|Av. Beira Mar, 99 - Fortaleza/CE|07/04/1995|(85) 99123-0009
+11|Karine Dias Moreira|Rua Amazonas, 200 - Natal/RN|23/12/1986|(84) 98888-1122
+12|Lucas Pereira Antunes|Av. Central, 876 - Campo Grande/MS|16/08/1983|(67) 98444-5566
+13|Mariana Costa Leal|Rua das Acácias, 10 - João Pessoa/PB|18/01/1991|(83) 99999-2222 
+14|Nelson Araújo Pires|Av. Paulista, 1050 - São Paulo/SP|30/05/1975|(11) 98787-4343
+15|Olivia Fernandes Prado|Rua Santos Dumont, 17 - Vitória/ES|06/11/1987|(27) 98181-2323
+16|Pedro Henrique Vieira|Rua Rio Branco, 455 - Belém/PA|02/07/1992|(91) 99292-8484
+17|Queila Ramos Bastos|Av. das Américas, 310 - Brasília/DF|21/03/1984|(61) 99696-5656
+18|Rafael Lima Barreto|Rua General Osório, 98 - Teresina/PI|04/10/1996|(86) 98787-9797
+19|Sandra Regina Lopes|Rua Dom Pedro I, 70 - Florianópolis/SC|12/02/1979|(48) 98585-6262
+20|Tiago Moreira Souza|Av. Fernando Ferrari, 200 - Vitória/ES|28/06/1980|(27) 98383-7373
