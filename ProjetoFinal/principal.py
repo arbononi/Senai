@@ -6,11 +6,13 @@ from funcoes import *
 from operacoes import verificar_operacoes
 import interface
 import historico
+import codigo_secreto as game
 
 class Principal:
     def __init__(self):
         if not historico.arquivo():
             historico.criar_arquivo()
+        self.codigo_secreto = 19691203
         pass
 
     def iniciar(self):
@@ -21,6 +23,9 @@ class Principal:
             posicionarCursor(interface.lin_padrao, 29)
             try:
                 opcao = int(input())
+                if opcao == self.codigo_secreto:
+                    game.iniciar_game()
+                    continue
                 if opcao not in interface.opcoes_calculadora:
                     interface.limpar_linha()
                     exibir_mensagem("Opção inválida!", interface.lin_padrao, interface.col_padrao)
