@@ -13,13 +13,6 @@ def exibirMensagem(linha, coluna, mensagem, saltar_linha ="\n"):
     print(mensagem, saltar_linha)
 
 def limpar_tela(start, stop, column, size):
-    
     for linha in range(start, stop):
         posicionarCursor(linha, column)
         print(" " * size, end="")
-
-def desenhar_tela(linha_inicial, layout):
-    for texto in layout:
-        posicionarCursor(linha_inicial, 28)
-        print(texto, end="")
-        linha_inicial += 1

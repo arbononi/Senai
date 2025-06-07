@@ -3,6 +3,7 @@ import os
 from os import system
 import calculos
 import try_except
+from arquivos import Arquivos
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.my_functions import *
@@ -42,12 +43,14 @@ class Aula2405205:
         self.opcoes_disponiveis = {
             '1' : self.calculadora,
             '2' : self.try_except,
-            '3' : self.calculadora_2
+            '3' : self.calculadora_2,
+            '4' : self.aula_31052025
         }
         self.opcoes = {
             '1' : { 'lin':  5, 'col':  3, 'value': ' 1 - Calculadora' },
             '2' : { 'lin':  6, 'col':  3, 'value': ' 2 - Try .. Except' },
             '3' : { 'lin':  7, 'col':  3, 'value': ' 3 - Calculadora 2 ' },
+            '4' : { 'lin':  8, 'col':  3, 'value': ' 4 - Aula 31/05/2025 '},
             '0' : { 'lin': 21, 'col': 43, 'value': ' 0 - Sair' }
         }
         self.opcoes_calculadora = [0, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -168,6 +171,10 @@ class Aula2405205:
                 exibir_mensagem("Opção inválida! Tente novamente!", wait_key=True)
                 limpar_linha(lin_padrao, col_padrao, size_padrao)
 
+    def aula_31052025(self):
+        app_arquivo = Arquivos()
+        app_arquivo.iniciar()
+
     def calculadora_2(self):
         while True:
             try:
@@ -246,7 +253,6 @@ class Aula2405205:
                 continue
             break
         return operacao
-
 
 
 if __name__ == "__main__":
